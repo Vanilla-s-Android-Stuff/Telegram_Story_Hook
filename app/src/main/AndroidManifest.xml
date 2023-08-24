@@ -11,6 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Telegram_Story_Hook"
-        tools:targetApi="31" />
+        tools:targetApi="31">
+
+        <!-- https://github.com/rovo89/XposedBridge/wiki/Development-tutorial#adding-the-xposed-framework-api-to-your-project -->
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Hook isService -> false" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="53" />
+
+        <!-- https://github.com/LSPosed/LSPosed/wiki/Module-Scope#background -->
+
+        <meta-data
+            android:name="xposedscope"
+            android:value="org.telegram.messenger" />
+
+    </application>
 
 </manifest>
